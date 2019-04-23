@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.post_horse.mapper.FavoritesVoMapper" >
+    <resultMap id="BaseResultMap" type="com.example.post_horse.pojo.FavoritesVo" >
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <id column="company_Id" property="companyId" jdbcType="BIGINT" />
+        <id column="user_Id" property="userId" jdbcType="BIGINT" />
+        <result column="company_address" property="companyAddress" jdbcType="VARCHAR" />
+        <result column="company_name" property="companyName" jdbcType="VARCHAR" />
+        <result column="service_ifo" property="serviceIfo" jdbcType="VARCHAR" />
+        <result column="img_url" property="imgUrl" jdbcType="VARCHAR" />
+    </resultMap>
+    <select id="findAllFavoritesByUserId" parameterType="Long" resultMap="BaseResultMap">
+        SELECT
+        f.id,f.company_Id,f.user_Id,
+        c.company_address,c.company_name,c.service_ifo,
+        u.img_url
+        FROM
+        user u,company c,favorites f
+        WHERE u.id=f.user_Id AND c.id=f.company_Id AND f.user_id=#{id,jdbcType=BIGINT}
+    </select>
+</mapper>

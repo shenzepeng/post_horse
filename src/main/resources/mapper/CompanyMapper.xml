@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.post_horse.mapper.CompanyMapper" >
+  <resultMap id="BaseResultMap" type="com.example.post_horse.pojo.Company" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="blanck_spance_space_one" property="blanckSpanceSpaceOne" jdbcType="VARCHAR" />
+    <result column="blanck_spance_space_three" property="blanckSpanceSpaceThree" jdbcType="VARCHAR" />
+    <result column="blanck_spance_space_two" property="blanckSpanceSpaceTwo" jdbcType="VARCHAR" />
+    <result column="company_address" property="companyAddress" jdbcType="VARCHAR" />
+    <result column="company_name" property="companyName" jdbcType="VARCHAR" />
+    <result column="company_qualifications" property="companyQualifications" jdbcType="VARCHAR" />
+    <result column="contacts_people_name" property="contactsPeopleName" jdbcType="VARCHAR" />
+    <result column="service_area" property="serviceArea" jdbcType="VARCHAR" />
+    <result column="service_ifo" property="serviceIfo" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, blanck_spance_space_one, blanck_spance_space_three, blanck_spance_space_two, 
+    company_address, company_name, company_qualifications, contacts_people_name, service_area, 
+    service_ifo, user_id
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.example.post_horse.pojo.CompanyExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from company
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from company
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from company
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.example.post_horse.pojo.CompanyExample" >
+    delete from company
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.example.post_horse.pojo.Company" >
+    insert into company (id, blanck_spance_space_one, blanck_spance_space_three, 
+      blanck_spance_space_two, company_address, company_name, 
+      company_qualifications, contacts_people_name, 
+      service_area, service_ifo, user_id
+      )
+    values (#{id,jdbcType=BIGINT}, #{blanckSpanceSpaceOne,jdbcType=VARCHAR}, #{blanckSpanceSpaceThree,jdbcType=VARCHAR}, 
+      #{blanckSpanceSpaceTwo,jdbcType=VARCHAR}, #{companyAddress,jdbcType=VARCHAR}, #{companyName,jdbcType=VARCHAR}, 
+      #{companyQualifications,jdbcType=VARCHAR}, #{contactsPeopleName,jdbcType=VARCHAR}, 
+      #{serviceArea,jdbcType=VARCHAR}, #{serviceIfo,jdbcType=VARCHAR}, #{userId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.post_horse.pojo.Company" >
+    insert into company
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="blanckSpanceSpaceOne != null" >
+        blanck_spance_space_one,
+      </if>
+      <if test="blanckSpanceSpaceThree != null" >
+        blanck_spance_space_three,
+      </if>
+      <if test="blanckSpanceSpaceTwo != null" >
+        blanck_spance_space_two,
+      </if>
+      <if test="companyAddress != null" >
+        company_address,
+      </if>
+      <if test="companyName != null" >
+        company_name,
+      </if>
+      <if test="companyQualifications != null" >
+        company_qualifications,
+      </if>
+      <if test="contactsPeopleName != null" >
+        contacts_people_name,
+      </if>
+      <if test="serviceArea != null" >
+        service_area,
+      </if>
+      <if test="serviceIfo != null" >
+        service_ifo,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="blanckSpanceSpaceOne != null" >
+        #{blanckSpanceSpaceOne,jdbcType=VARCHAR},
+      </if>
+      <if test="blanckSpanceSpaceThree != null" >
+        #{blanckSpanceSpaceThree,jdbcType=VARCHAR},
+      </if>
+      <if test="blanckSpanceSpaceTwo != null" >
+        #{blanckSpanceSpaceTwo,jdbcType=VARCHAR},
+      </if>
+      <if test="companyAddress != null" >
+        #{companyAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="companyName != null" >
+        #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyQualifications != null" >
+        #{companyQualifications,jdbcType=VARCHAR},
+      </if>
+      <if test="contactsPeopleName != null" >
+        #{contactsPeopleName,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceArea != null" >
+        #{serviceArea,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceIfo != null" >
+        #{serviceIfo,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.example.post_horse.pojo.CompanyExample" resultType="java.lang.Integer" >
+    select count(*) from company
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update company
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.blanckSpanceSpaceOne != null" >
+        blanck_spance_space_one = #{record.blanckSpanceSpaceOne,jdbcType=VARCHAR},
+      </if>
+      <if test="record.blanckSpanceSpaceThree != null" >
+        blanck_spance_space_three = #{record.blanckSpanceSpaceThree,jdbcType=VARCHAR},
+      </if>
+      <if test="record.blanckSpanceSpaceTwo != null" >
+        blanck_spance_space_two = #{record.blanckSpanceSpaceTwo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyAddress != null" >
+        company_address = #{record.companyAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyName != null" >
+        company_name = #{record.companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyQualifications != null" >
+        company_qualifications = #{record.companyQualifications,jdbcType=VARCHAR},
+      </if>
+      <if test="record.contactsPeopleName != null" >
+        contacts_people_name = #{record.contactsPeopleName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.serviceArea != null" >
+        service_area = #{record.serviceArea,jdbcType=VARCHAR},
+      </if>
+      <if test="record.serviceIfo != null" >
+        service_ifo = #{record.serviceIfo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userId != null" >
+        user_id = #{record.userId,jdbcType=BIGINT},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update company
+    set id = #{record.id,jdbcType=BIGINT},
+      blanck_spance_space_one = #{record.blanckSpanceSpaceOne,jdbcType=VARCHAR},
+      blanck_spance_space_three = #{record.blanckSpanceSpaceThree,jdbcType=VARCHAR},
+      blanck_spance_space_two = #{record.blanckSpanceSpaceTwo,jdbcType=VARCHAR},
+      company_address = #{record.companyAddress,jdbcType=VARCHAR},
+      company_name = #{record.companyName,jdbcType=VARCHAR},
+      company_qualifications = #{record.companyQualifications,jdbcType=VARCHAR},
+      contacts_people_name = #{record.contactsPeopleName,jdbcType=VARCHAR},
+      service_area = #{record.serviceArea,jdbcType=VARCHAR},
+      service_ifo = #{record.serviceIfo,jdbcType=VARCHAR},
+      user_id = #{record.userId,jdbcType=BIGINT}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.post_horse.pojo.Company" >
+    update company
+    <set >
+      <if test="blanckSpanceSpaceOne != null" >
+        blanck_spance_space_one = #{blanckSpanceSpaceOne,jdbcType=VARCHAR},
+      </if>
+      <if test="blanckSpanceSpaceThree != null" >
+        blanck_spance_space_three = #{blanckSpanceSpaceThree,jdbcType=VARCHAR},
+      </if>
+      <if test="blanckSpanceSpaceTwo != null" >
+        blanck_spance_space_two = #{blanckSpanceSpaceTwo,jdbcType=VARCHAR},
+      </if>
+      <if test="companyAddress != null" >
+        company_address = #{companyAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="companyName != null" >
+        company_name = #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyQualifications != null" >
+        company_qualifications = #{companyQualifications,jdbcType=VARCHAR},
+      </if>
+      <if test="contactsPeopleName != null" >
+        contacts_people_name = #{contactsPeopleName,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceArea != null" >
+        service_area = #{serviceArea,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceIfo != null" >
+        service_ifo = #{serviceIfo,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.post_horse.pojo.Company" >
+    update company
+    set blanck_spance_space_one = #{blanckSpanceSpaceOne,jdbcType=VARCHAR},
+      blanck_spance_space_three = #{blanckSpanceSpaceThree,jdbcType=VARCHAR},
+      blanck_spance_space_two = #{blanckSpanceSpaceTwo,jdbcType=VARCHAR},
+      company_address = #{companyAddress,jdbcType=VARCHAR},
+      company_name = #{companyName,jdbcType=VARCHAR},
+      company_qualifications = #{companyQualifications,jdbcType=VARCHAR},
+      contacts_people_name = #{contactsPeopleName,jdbcType=VARCHAR},
+      service_area = #{serviceArea,jdbcType=VARCHAR},
+      service_ifo = #{serviceIfo,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

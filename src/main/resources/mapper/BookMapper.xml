@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.post_horse.mapper.BookMapper" >
+  <resultMap id="BaseResultMap" type="com.example.post_horse.pojo.Book" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="blanck_spance_space_one" property="blanckSpanceSpaceOne" jdbcType="VARCHAR" />
+    <result column="blanck_spance_space_three" property="blanckSpanceSpaceThree" jdbcType="VARCHAR" />
+    <result column="blanck_spance_space_two" property="blanckSpanceSpaceTwo" jdbcType="VARCHAR" />
+    <result column="company_id" property="companyId" jdbcType="BIGINT" />
+    <result column="company_name" property="companyName" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="VARCHAR" />
+    <result column="customer_name" property="customerName" jdbcType="VARCHAR" />
+    <result column="destination" property="destination" jdbcType="VARCHAR" />
+    <result column="evaluate_content" property="evaluateContent" jdbcType="VARCHAR" />
+    <result column="finished_time" property="finishedTime" jdbcType="VARCHAR" />
+    <result column="order_status" property="orderStatus" jdbcType="VARCHAR" />
+    <result column="origin" property="origin" jdbcType="VARCHAR" />
+    <result column="review" property="review" jdbcType="VARCHAR" />
+    <result column="score" property="score" jdbcType="VARCHAR" />
+    <result column="string_id" property="stringId" jdbcType="VARCHAR" />
+    <result column="tel_phone_number" property="telPhoneNumber" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, blanck_spance_space_one, blanck_spance_space_three, blanck_spance_space_two, 
+    company_id, company_name, create_time, customer_name, destination, evaluate_content, 
+    finished_time, order_status, origin, review, score, string_id, tel_phone_number, 
+    user_id
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.example.post_horse.pojo.BookExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from book
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from book
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from book
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.example.post_horse.pojo.BookExample" >
+    delete from book
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.example.post_horse.pojo.Book" >
+    insert into book (id, blanck_spance_space_one, blanck_spance_space_three, 
+      blanck_spance_space_two, company_id, company_name, 
+      create_time, customer_name, destination, 
+      evaluate_content, finished_time, order_status, 
+      origin, review, score, 
+      string_id, tel_phone_number, user_id
+      )
+    values (#{id,jdbcType=BIGINT}, #{blanckSpanceSpaceOne,jdbcType=VARCHAR}, #{blanckSpanceSpaceThree,jdbcType=VARCHAR}, 
+      #{blanckSpanceSpaceTwo,jdbcType=VARCHAR}, #{companyId,jdbcType=BIGINT}, #{companyName,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=VARCHAR}, #{customerName,jdbcType=VARCHAR}, #{destination,jdbcType=VARCHAR}, 
+      #{evaluateContent,jdbcType=VARCHAR}, #{finishedTime,jdbcType=VARCHAR}, #{orderStatus,jdbcType=VARCHAR}, 
+      #{origin,jdbcType=VARCHAR}, #{review,jdbcType=VARCHAR}, #{score,jdbcType=VARCHAR}, 
+      #{stringId,jdbcType=VARCHAR}, #{telPhoneNumber,jdbcType=VARCHAR}, #{userId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.post_horse.pojo.Book" >
+    insert into book
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="blanckSpanceSpaceOne != null" >
+        blanck_spance_space_one,
+      </if>
+      <if test="blanckSpanceSpaceThree != null" >
+        blanck_spance_space_three,
+      </if>
+      <if test="blanckSpanceSpaceTwo != null" >
+        blanck_spance_space_two,
+      </if>
+      <if test="companyId != null" >
+        company_id,
+      </if>
+      <if test="companyName != null" >
+        company_name,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="customerName != null" >
+        customer_name,
+      </if>
+      <if test="destination != null" >
+        destination,
+      </if>
+      <if test="evaluateContent != null" >
+        evaluate_content,
+      </if>
+      <if test="finishedTime != null" >
+        finished_time,
+      </if>
+      <if test="orderStatus != null" >
+        order_status,
+      </if>
+      <if test="origin != null" >
+        origin,
+      </if>
+      <if test="review != null" >
+        review,
+      </if>
+      <if test="score != null" >
+        score,
+      </if>
+      <if test="stringId != null" >
+        string_id,
+      </if>
+      <if test="telPhoneNumber != null" >
+        tel_phone_number,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="blanckSpanceSpaceOne != null" >
+        #{blanckSpanceSpaceOne,jdbcType=VARCHAR},
+      </if>
+      <if test="blanckSpanceSpaceThree != null" >
+        #{blanckSpanceSpaceThree,jdbcType=VARCHAR},
+      </if>
+      <if test="blanckSpanceSpaceTwo != null" >
+        #{blanckSpanceSpaceTwo,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null" >
+        #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="companyName != null" >
+        #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=VARCHAR},
+      </if>
+      <if test="customerName != null" >
+        #{customerName,jdbcType=VARCHAR},
+      </if>
+      <if test="destination != null" >
+        #{destination,jdbcType=VARCHAR},
+      </if>
+      <if test="evaluateContent != null" >
+        #{evaluateContent,jdbcType=VARCHAR},
+      </if>
+      <if test="finishedTime != null" >
+        #{finishedTime,jdbcType=VARCHAR},
+      </if>
+      <if test="orderStatus != null" >
+        #{orderStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="origin != null" >
+        #{origin,jdbcType=VARCHAR},
+      </if>
+      <if test="review != null" >
+        #{review,jdbcType=VARCHAR},
+      </if>
+      <if test="score != null" >
+        #{score,jdbcType=VARCHAR},
+      </if>
+      <if test="stringId != null" >
+        #{stringId,jdbcType=VARCHAR},
+      </if>
+      <if test="telPhoneNumber != null" >
+        #{telPhoneNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.example.post_horse.pojo.BookExample" resultType="java.lang.Integer" >
+    select count(*) from book
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update book
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.blanckSpanceSpaceOne != null" >
+        blanck_spance_space_one = #{record.blanckSpanceSpaceOne,jdbcType=VARCHAR},
+      </if>
+      <if test="record.blanckSpanceSpaceThree != null" >
+        blanck_spance_space_three = #{record.blanckSpanceSpaceThree,jdbcType=VARCHAR},
+      </if>
+      <if test="record.blanckSpanceSpaceTwo != null" >
+        blanck_spance_space_two = #{record.blanckSpanceSpaceTwo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyId != null" >
+        company_id = #{record.companyId,jdbcType=BIGINT},
+      </if>
+      <if test="record.companyName != null" >
+        company_name = #{record.companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.customerName != null" >
+        customer_name = #{record.customerName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.destination != null" >
+        destination = #{record.destination,jdbcType=VARCHAR},
+      </if>
+      <if test="record.evaluateContent != null" >
+        evaluate_content = #{record.evaluateContent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.finishedTime != null" >
+        finished_time = #{record.finishedTime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderStatus != null" >
+        order_status = #{record.orderStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.origin != null" >
+        origin = #{record.origin,jdbcType=VARCHAR},
+      </if>
+      <if test="record.review != null" >
+        review = #{record.review,jdbcType=VARCHAR},
+      </if>
+      <if test="record.score != null" >
+        score = #{record.score,jdbcType=VARCHAR},
+      </if>
+      <if test="record.stringId != null" >
+        string_id = #{record.stringId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.telPhoneNumber != null" >
+        tel_phone_number = #{record.telPhoneNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userId != null" >
+        user_id = #{record.userId,jdbcType=BIGINT},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update book
+    set id = #{record.id,jdbcType=BIGINT},
+      blanck_spance_space_one = #{record.blanckSpanceSpaceOne,jdbcType=VARCHAR},
+      blanck_spance_space_three = #{record.blanckSpanceSpaceThree,jdbcType=VARCHAR},
+      blanck_spance_space_two = #{record.blanckSpanceSpaceTwo,jdbcType=VARCHAR},
+      company_id = #{record.companyId,jdbcType=BIGINT},
+      company_name = #{record.companyName,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=VARCHAR},
+      customer_name = #{record.customerName,jdbcType=VARCHAR},
+      destination = #{record.destination,jdbcType=VARCHAR},
+      evaluate_content = #{record.evaluateContent,jdbcType=VARCHAR},
+      finished_time = #{record.finishedTime,jdbcType=VARCHAR},
+      order_status = #{record.orderStatus,jdbcType=VARCHAR},
+      origin = #{record.origin,jdbcType=VARCHAR},
+      review = #{record.review,jdbcType=VARCHAR},
+      score = #{record.score,jdbcType=VARCHAR},
+      string_id = #{record.stringId,jdbcType=VARCHAR},
+      tel_phone_number = #{record.telPhoneNumber,jdbcType=VARCHAR},
+      user_id = #{record.userId,jdbcType=BIGINT}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.post_horse.pojo.Book" >
+    update book
+    <set >
+      <if test="blanckSpanceSpaceOne != null" >
+        blanck_spance_space_one = #{blanckSpanceSpaceOne,jdbcType=VARCHAR},
+      </if>
+      <if test="blanckSpanceSpaceThree != null" >
+        blanck_spance_space_three = #{blanckSpanceSpaceThree,jdbcType=VARCHAR},
+      </if>
+      <if test="blanckSpanceSpaceTwo != null" >
+        blanck_spance_space_two = #{blanckSpanceSpaceTwo,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null" >
+        company_id = #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="companyName != null" >
+        company_name = #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=VARCHAR},
+      </if>
+      <if test="customerName != null" >
+        customer_name = #{customerName,jdbcType=VARCHAR},
+      </if>
+      <if test="destination != null" >
+        destination = #{destination,jdbcType=VARCHAR},
+      </if>
+      <if test="evaluateContent != null" >
+        evaluate_content = #{evaluateContent,jdbcType=VARCHAR},
+      </if>
+      <if test="finishedTime != null" >
+        finished_time = #{finishedTime,jdbcType=VARCHAR},
+      </if>
+      <if test="orderStatus != null" >
+        order_status = #{orderStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="origin != null" >
+        origin = #{origin,jdbcType=VARCHAR},
+      </if>
+      <if test="review != null" >
+        review = #{review,jdbcType=VARCHAR},
+      </if>
+      <if test="score != null" >
+        score = #{score,jdbcType=VARCHAR},
+      </if>
+      <if test="stringId != null" >
+        string_id = #{stringId,jdbcType=VARCHAR},
+      </if>
+      <if test="telPhoneNumber != null" >
+        tel_phone_number = #{telPhoneNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.post_horse.pojo.Book" >
+    update book
+    set blanck_spance_space_one = #{blanckSpanceSpaceOne,jdbcType=VARCHAR},
+      blanck_spance_space_three = #{blanckSpanceSpaceThree,jdbcType=VARCHAR},
+      blanck_spance_space_two = #{blanckSpanceSpaceTwo,jdbcType=VARCHAR},
+      company_id = #{companyId,jdbcType=BIGINT},
+      company_name = #{companyName,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=VARCHAR},
+      customer_name = #{customerName,jdbcType=VARCHAR},
+      destination = #{destination,jdbcType=VARCHAR},
+      evaluate_content = #{evaluateContent,jdbcType=VARCHAR},
+      finished_time = #{finishedTime,jdbcType=VARCHAR},
+      order_status = #{orderStatus,jdbcType=VARCHAR},
+      origin = #{origin,jdbcType=VARCHAR},
+      review = #{review,jdbcType=VARCHAR},
+      score = #{score,jdbcType=VARCHAR},
+      string_id = #{stringId,jdbcType=VARCHAR},
+      tel_phone_number = #{telPhoneNumber,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
