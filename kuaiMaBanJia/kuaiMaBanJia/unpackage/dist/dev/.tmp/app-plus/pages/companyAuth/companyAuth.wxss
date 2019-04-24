@@ -1,0 +1,67 @@
+.list-box {
+  width: 100%;
+}
+.list-box .list-item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  min-height: 120rpx;
+  padding: 30rpx 30rpx;
+  border-bottom: 1rpx solid #ddd;
+}
+.list-box .list-item .info {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 450rpx;
+}
+.list-box .list-item .info .info-img {
+  width: 450rpx;
+  height: 450rpx;
+}
+.list-box .list-item .btn {
+  width: 600rpx;
+}
+.auth-again {
+  width: 100%;
+}
+.auth-again .auth-item {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 20rpx 30rpx;
+}
+.auth-again .auth-item .input {
+  width: auto;
+  border: 1rpx solid #ddd;
+  padding: 10rpx 0;
+  padding-left: 20rpx;
+}
+.auth-again .auth-item .image {
+  width: 100%;
+}
+.auth-again .auth-item .demo {
+  background: #FFF;
+  padding: 50rpx;
+  border: 1rpx solid #ddd;
+}
+

@@ -1,0 +1,31 @@
+.auth-again {
+  width: 100%;
+}
+.auth-again .auth-item {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 20rpx 30rpx;
+}
+.auth-again .auth-item .input {
+  width: auto;
+  border: 1rpx solid #ddd;
+  padding: 10rpx 0;
+  padding-left: 20rpx;
+}
+.auth-again .auth-item .picker {
+  width: auto;
+  height: 80rpx;
+  line-height: 80rpx;
+  border: 1rpx solid #ddd;
+  padding: 10rpx 0;
+  padding-left: 20rpx;
+}
+.auth-again .auth-item .image {
+  width: 100%;
+}
+.auth-again .auth-item .demo {
+  background: #FFF;
+  padding: 50rpx;
+  border: 1rpx solid #ddd;
+}
+

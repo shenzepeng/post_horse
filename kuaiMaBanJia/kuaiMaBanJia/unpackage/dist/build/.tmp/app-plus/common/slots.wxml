@@ -1,0 +1,6 @@
+<import src="/components/uni-rate/uni-rate.vue.wxml" />
+<import src="/components/mehaotian-search.vue.wxml" />
+<import src="/components/uni-icon/uni-icon.vue.wxml" />
+<import src="/components/uni-badge/uni-badge.vue.wxml" />
+<import src="/common/slots.wxml" />
+

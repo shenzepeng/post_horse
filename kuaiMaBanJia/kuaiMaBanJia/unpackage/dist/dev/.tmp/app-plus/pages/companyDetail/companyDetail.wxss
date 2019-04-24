@@ -1,0 +1,99 @@
+.companyName {
+  margin-bottom: 30rpx;
+}
+.companyName .name {
+  padding: 30rpx 30rpx;
+}
+.companyName .state {
+  padding-left: 30rpx;
+  background-color: #FFF7C0;
+}
+.info-box {
+  margin-bottom: 30rpx;
+  border-top: 1rpx solid #ddd;
+  border-bottom: 1rpx solid #ddd;
+}
+.info-box .space {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 30rpx;
+  height: 60rpx;
+}
+.info-box .space .left {
+  width: 150rpx;
+}
+.info-box .space .right .right-icon {
+  margin-left: 60rpx;
+}
+.introduction {
+  border-top: 1rpx solid #ddd;
+  border-bottom: 1rpx solid #ddd;
+}
+.introduction .title {
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 30rpx;
+  border-bottom: 1rpx solid #ddd;
+}
+.introduction .content {
+  padding: 30rpx;
+}
+.btn-box {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: 100rpx;
+  padding: 0 30rpx;
+  border-top: 1rpx solid #ddd;
+}
+.btn-box .collection {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.btn-box .btn {
+  width: 580rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 0;
+}
+

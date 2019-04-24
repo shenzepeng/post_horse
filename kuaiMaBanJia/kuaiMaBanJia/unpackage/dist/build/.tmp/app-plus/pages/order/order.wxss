@@ -1,0 +1,70 @@
+
+.segmented-control {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	width: 75%;
+	font-size: 28rpx;
+	border-radius: 10rpx;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.segmented-control.button {
+	border: 2rpx solid;
+}
+.segmented-control.text {
+	border: 0;
+	border-radius: 0rpx;
+}
+.segmented-control-item {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
+	text-align: center;
+	line-height: 60rpx;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+.segmented-control-item.button {
+	border-left: 1rpx solid;
+}
+.segmented-control-item.text {
+	border-left: 0;
+}
+.segmented-control-item:first-child {
+	border-left-width: 0;
+}
+
+.uni-triplex-right {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.order-item-button {
+  width: 160rpx;
+  height: 60rpx;
+  font-size: 26rpx;
+  margin: 0;
+}
+.content {
+  margin-top: 30rpx;
+}
+

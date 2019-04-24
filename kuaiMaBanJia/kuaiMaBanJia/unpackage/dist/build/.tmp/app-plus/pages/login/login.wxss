@@ -1,0 +1,70 @@
+.login-box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.login-box .logo-box {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 33vh;
+}
+.login-box .logo-box .close-icon {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  top: 30rpx;
+  left: 30rpx;
+}
+.login-box .logo-box .login-logo {
+  width: 200rpx;
+  height: 294rpx;
+}
+.login-box .logo-box .register-btn {
+  position: absolute;
+  right: 30rpx;
+  top: 30rpx;
+}
+.login-box .login-form {
+  width: 600rpx;
+}
+.login-box .login-form .form-item {
+  margin-bottom: 30rpx;
+}
+.login-box .login-form .form-item .login-input {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: 60rpx;
+  padding-left: 30rpx;
+  background-color: #f4f6f8;
+  font-size: 26rpx;
+  line-height: 1;
+  border-radius: 10rpx;
+}
+

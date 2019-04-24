@@ -1,0 +1,2 @@
+<import src="./companyAuth.vue.wxml" />
+    <template is="693bc546" data="{{ ...$root['0'], $root }}"/>

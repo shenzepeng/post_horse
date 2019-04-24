@@ -1,0 +1,131 @@
+{
+    "pages" : [
+        //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+        {
+            "path" : "pages/index/index",
+            "style" : {
+                "navigationBarTitleText" : "首页",
+                "enablePullDownRefresh": true
+            }
+        },
+        {
+            "path" : "pages/order/order",
+            "style" : {
+                "navigationBarTitleText" : "订单",
+                "enablePullDownRefresh": true
+            }
+        },
+		{
+			"path" : "pages/orderDetail/orderDetail",
+			"style" : {
+				"navigationBarTitleText" : "订单详情",
+                "enablePullDownRefresh": true
+			}
+		},
+        {
+            "path" : "pages/myCenter/myCenter",
+            "style" : {
+                "navigationBarTitleText" : "个人中心",
+                "enablePullDownRefresh": true
+            }
+        },
+        {
+            "path" : "pages/register/register",
+            "style" : {
+                "navigationBarTitleText" : "注册"
+			}
+        },
+        {
+            "path" : "pages/login/login",
+            "style" : {
+                "navigationBarTitleText" : "登录"
+            }
+        }
+        ,{
+            "path" : "pages/userInfo/userInfo",
+            "style" : {
+                "navigationBarTitleText" : "账号信息"
+			}
+        }
+        ,{
+            "path" : "pages/companyAuth/companyAuth",
+            "style" : {
+                "navigationBarTitleText" : "公司认证"
+			}
+        }
+        ,{
+            "path" : "pages/myCollection/myCollection",
+            "style" : {
+                "navigationBarTitleText" : "我的收藏",
+                "enablePullDownRefresh": true
+			}
+        }
+        ,{
+            "path" : "pages/myEvaluate/myEvaluate",
+            "style" : {
+                "navigationBarTitleText" : "我的评价",
+                "enablePullDownRefresh": true
+			}
+        }
+        ,{
+            "path" : "pages/companyDetail/companyDetail",
+            "style" : {
+                "navigationBarTitleText" : "公司详情",
+                "enablePullDownRefresh": true
+			}
+        }
+        ,{
+            "path" : "pages/confirmOrder/confirmOrder",
+            "style" : {
+                "navigationBarTitleText" : "确认订单"
+			}
+        }
+        ,{
+            "path" : "pages/changeNickName/changeNickName",
+            "style" : {
+                "navigationBarTitleText" : "修改昵称"
+			}
+        }
+        ,{
+            "path" : "pages/evaluate/evaluate",
+            "style" : {
+                "navigationBarTitleText" : "填写评价"
+			}
+        }
+    ],
+    //                 "app-plus" : {
+    //                     "bounce" : "none"
+    //                 }
+    "globalStyle" : {
+        "navigationBarTextStyle" : "white",
+        "navigationBarTitleText" : "uni-app",
+        "navigationBarBackgroundColor" : "#04a9fe",
+        "backgroundColor": "#F8F8F8"
+    },
+    "tabBar" : {
+        "color" : "#7A7E83",
+        "selectedColor" : "#007AFF",
+        "borderStyle" : "black",
+        "backgroundColor" : "#F8F8F8",
+        "list" : [
+            {
+                "pagePath" : "pages/index/index",
+                "iconPath" : "static/index.png",
+                "selectedIconPath" : "static/indexHL.png",
+                "text" : "首页"
+            },
+            {
+                "pagePath" : "pages/order/order",
+                "iconPath" : "static/order.png",
+                "selectedIconPath" : "static/orderHL.png",
+                "text" : "订单"
+            },
+            {
+                "pagePath" : "pages/myCenter/myCenter",
+                "iconPath" : "static/my.png",
+                "selectedIconPath" : "static/myHL.png",
+                "text" : "我的"
+            }
+        ]
+    }
+}

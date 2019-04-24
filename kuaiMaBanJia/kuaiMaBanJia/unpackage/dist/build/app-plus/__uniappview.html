@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+    <head>
+        <meta charset="UTF-8" />
+        <script>
+            var coverSupport = 'CSS' in window && typeof CSS.supports === 'function' && (CSS.supports('top: env(a)') || CSS.supports('top: constant(a)'))
+            document.write('<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' + (coverSupport ? ', viewport-fit=cover' : '') + '" />')
+        </script>
+        <title>View</title>
+        <style>
+            * {
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            input[type="search"i]::-webkit-search-cancel-button {
+                display: none;
+            }
+
+        </style>
+        <script>
+            var __wxConfig = {"debug":false,"appname":"快马搬家","entryPagePath":"pages/index/index.html","page":{"pages/index/index.html":{"window":{"usingComponents":{},"navigationBarTitleText":"首页","enablePullDownRefresh":true}},"pages/order/order.html":{"window":{"usingComponents":{},"navigationBarTitleText":"订单","enablePullDownRefresh":true}},"pages/orderDetail/orderDetail.html":{"window":{"usingComponents":{},"navigationBarTitleText":"订单详情","enablePullDownRefresh":true}},"pages/myCenter/myCenter.html":{"window":{"usingComponents":{},"navigationBarTitleText":"个人中心","enablePullDownRefresh":true}},"pages/register/register.html":{"window":{"usingComponents":{},"navigationBarTitleText":"注册"}},"pages/login/login.html":{"window":{"usingComponents":{},"navigationBarTitleText":"登录"}},"pages/userInfo/userInfo.html":{"window":{"usingComponents":{},"navigationBarTitleText":"账号信息"}},"pages/companyAuth/companyAuth.html":{"window":{"usingComponents":{},"navigationBarTitleText":"公司认证"}},"pages/myCollection/myCollection.html":{"window":{"usingComponents":{},"navigationBarTitleText":"我的收藏","enablePullDownRefresh":true}},"pages/myEvaluate/myEvaluate.html":{"window":{"usingComponents":{},"navigationBarTitleText":"我的评价","enablePullDownRefresh":true}},"pages/companyDetail/companyDetail.html":{"window":{"usingComponents":{},"navigationBarTitleText":"公司详情","enablePullDownRefresh":true}},"pages/confirmOrder/confirmOrder.html":{"window":{"usingComponents":{},"navigationBarTitleText":"确认订单"}},"pages/changeNickName/changeNickName.html":{"window":{"usingComponents":{},"navigationBarTitleText":"修改昵称"}},"pages/evaluate/evaluate.html":{"window":{"usingComponents":{},"navigationBarTitleText":"填写评价"}}},"global":{"window":{"navigationBarTextStyle":"white","navigationBarTitleText":"uni-app","navigationBarBackgroundColor":"#04a9fe","backgroundColor":"#F8F8F8"}},"tabBar":{"color":"#7A7E83","selectedColor":"#007AFF","backgroundColor":"#F8F8F8","borderStyle":"black","list":[{"pagePath":"pages/index/index.html","iconPath":"static/index.png","selectedIconPath":"static/indexHL.png","text":"首页"},{"pagePath":"pages/order/order.html","iconPath":"static/order.png","selectedIconPath":"static/orderHL.png","text":"订单"},{"pagePath":"pages/myCenter/myCenter.html","iconPath":"static/my.png","selectedIconPath":"static/myHL.png","text":"我的"}],"position":"bottom"},"networkTimeout":{"request":60000,"connectSocket":60000,"uploadFile":60000,"downloadFile":60000},"platform":"devtools","pages":["pages/index/index","pages/order/order","pages/orderDetail/orderDetail","pages/myCenter/myCenter","pages/register/register","pages/login/login","pages/userInfo/userInfo","pages/companyAuth/companyAuth","pages/myCollection/myCollection","pages/myEvaluate/myEvaluate","pages/companyDetail/companyDetail","pages/confirmOrder/confirmOrder","pages/changeNickName/changeNickName","pages/evaluate/evaluate"],"subPackages":[],"usingComponents":{},"splashscreen":{"alwaysShowBeforeRender":true,"autoclose":false},"compilerVersion":"1.9.3"}
+
+        </script>
+        <script>
+            var __id__ = '';
+            window.__dispatchGenerateFunc__ = function(page) {
+                __id__ = page;
+                document.title = page;
+                // window.history.pushState('', '', page);
+                plus.webview.currentWebview().setJsFile('_www/' + page.replace('.html', '.js'));
+            };
+
+        </script>
+        <script src="__uniappes6.js"></script>
+        <script src="uniapp://ready"></script>
+    </head>
+
+    <body>
+        <div></div>
+    </body>
+
+</html>

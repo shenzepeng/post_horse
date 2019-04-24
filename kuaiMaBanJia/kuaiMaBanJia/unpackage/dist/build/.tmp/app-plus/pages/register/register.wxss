@@ -1,0 +1,75 @@
+.register-box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.register-box .logo-box {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 33vh;
+}
+.register-box .logo-box .close-icon {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  top: 30rpx;
+  left: 30rpx;
+}
+.register-box .logo-box .register-logo {
+  width: 200rpx;
+  height: 294rpx;
+}
+.register-box .logo-box .login-btn {
+  position: absolute;
+  right: 30rpx;
+  top: 30rpx;
+}
+.register-box .register-form {
+  width: 600rpx;
+}
+.register-box .register-form .form-item {
+  margin-bottom: 30rpx;
+}
+.register-box .register-form .form-item .register-input {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: 60rpx;
+  padding-left: 30rpx;
+  background-color: #f4f6f8;
+  font-size: 26rpx;
+  line-height: 1;
+  border-radius: 10rpx;
+}
+.register-box .register-form .form-item .register-input .text {
+  height: 60rpx;
+  font-size: 26rpx;
+  line-height: 60rpx;
+}
+
