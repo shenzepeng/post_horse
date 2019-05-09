@@ -71,19 +71,27 @@ public class FavotiesController {
     @ApiOperation("通过userId发现收藏，返回list")
     @GetMapping("/findFavortiesByUserId.action")
     public SzpJsonResult findFavortiesByUserId(long userId, HttpServletResponse response){
-
         //通过userId找到收藏
         List<Favorites> favortiesByUserId = favoriteService.findFavortiesByUserId(userId);
+
         List<FavoritesQueryVo> favoritesQueryVos=new ArrayList<>();
+        //遍历跟user所有收藏
         for (int i=0;i<favortiesByUserId.size();i++){
-            Long userId1 = favortiesByUserId.get(i).getUserId();
+            //从收藏中获取companyId
             Long companyId = favortiesByUserId.get(i).getCompanyId();
-            User user=userService.findUserById(userId1);
+            //通过companyId找到公司
             Company company=companyService.findCompanyById(companyId);
+            //通过主键找到user
+            User user=userService.findUserById(company.getUserId());
+
+            //List<Company> companyByCompanyUserId = companyService.findCompanyByCompanyUserId(userId);
             FavoritesQueryVo favoritesQueryVo=new FavoritesQueryVo();
-            favoritesQueryVo.setUser(user);
-            favoritesQueryVo.setCompany(company);
             favoritesQueryVo.setFavorites(favortiesByUserId.get(i));
+            favoritesQueryVo.setCompany(company);
+            favoritesQueryVo.setUser(user);
+
+
+
             favoritesQueryVos.add(favoritesQueryVo);
         }
         return SzpJsonResult.ok(favoritesQueryVos);

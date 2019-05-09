@@ -33,7 +33,6 @@ public class QueryVoController {
     @ApiOperation("通过搜索名称展示公司信息")
     @GetMapping("/findCompanyListVoByCompanyName.action")
     public SzpJsonResult findCompanyListVoByCompanyName(String companyName, HttpServletResponse response){
-        response.setHeader("Access-Control-Allow-Origin", "*");
         List<CompanyListVo> companyListVoByCompanyName = queryVoService.findCompanyListVoByCompanyName(companyName);
         return SzpJsonResult.ok(companyListVoByCompanyName);
     }

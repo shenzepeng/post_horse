@@ -38,6 +38,7 @@ public class CompanyController {
     @ApiOperation("通过id更新公司信息，更新值不为null的字段")
     @PutMapping("/updateCompanyById.action")
     public SzpJsonResult updateCompanyById(@RequestBody Company company, HttpServletResponse response){
+
         Company companyById = companyService.findCompanyById(company.getId());
         company.setUserId(companyById.getUserId());
         companyService.updateCompanyById(company);
